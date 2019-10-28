@@ -12,8 +12,6 @@ scalacOptions += "-Ypartial-unification"
 
 lazy val commonServiceSettings = commonSettings
 
-val macwire = "com.softwaremill.macwire" %% "macros" % "2.3.0" % "provided"
-val scalaTest = "org.scalatest" %% "scalatest" % "3.0.4" % Test
 val serviceLocator = "com.lightbend.lagom" %% "lagom-scaladsl-akka-discovery-service-locator" % "1.0.0"
 val scalaLogging = "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2"
 val kamonBundle = "io.kamon" %% "kamon-bundle" % "2.0.2"
@@ -39,8 +37,6 @@ lazy val `sample-service` = (project in file("sample-service"))
       lagomScaladslPersistenceJdbc,
       lagomScaladslKafkaBroker,
       lagomScaladslTestKit,
-      macwire,
-      scalaTest,
       serviceLocator,
     )
   )
@@ -54,8 +50,6 @@ lazy val `sample-play-app` = (project in file("sample-play-app"))
     libraryDependencies ++= Seq(
       lagomScaladslServer,
       lagomScaladslTestKit,
-      macwire,
-      scalaTest,
       serviceLocator,
     ),
     excludeDependencies += "ch.qos.logback" % "logback-classic"
